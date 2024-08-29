@@ -29,6 +29,10 @@ public class SecurityConfig {
                         .loginProcessingUrl("/loginProc")
                         .permitAll()
                 )
+                .sessionManagement(session-> session
+                        .maximumSessions(1) // 한 개의 아이디당 허용 갯수
+                        .maxSessionsPreventsLogin(true) // maximumSessions()에 정의된 다중 로그인 갯수를 초과했을 경우 처리 방법
+                )
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers-> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
         ;

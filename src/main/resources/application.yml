@@ -4,3 +4,11 @@ spring:
     url: jdbc:h2:mem:test
     username: sa
     password:
+
+server:
+  servlet:
+    session:
+#      ? ??
+#      timeout: 1800
+#      ? ??
+      timeout: 30m
