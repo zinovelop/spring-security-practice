@@ -1,0 +1,5 @@
+spring:
+  security:
+    user:
+      name: jinho
+      password: asd123
